@@ -2,6 +2,7 @@ from django.urls import path
 from .views import HomeView, RoomView
 
 urlpatterns = [
-    path("", HomeView, name="login"),
-    path("<str:room_name>/<str:username>/", RoomView, name="room"),
+    path("login/", HomeView.as_view(), name="login"),
+path("<int:room_id>/<int:user_id>/", RoomView.as_view(), name="room"),
+    
 ]
